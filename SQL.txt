@@ -1,0 +1,12 @@
+;with cteMax as
+(
+select d.Id, d.Name, max(e.salary) as Maxsal
+from Department d inner join Employee e 
+on d.Id = e.DeptId
+group by d.Id, d.Name
+)
+select c.Name, e.Name, e.Salary from cteMax c
+inner join Employee e
+on e.DeptId = c.Id
+and c.Maxsal = e.Salary
+order by c.Id asc
