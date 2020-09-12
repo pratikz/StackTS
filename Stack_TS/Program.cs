@@ -17,6 +17,7 @@ namespace Stack_TS
             Console.WriteLine(StackTS<int>.Peek());
             StackTS<int>.Pop();
             Console.WriteLine(StackTS<int>.Peek());
+            Console.ReadKey();
         }
 
         public static class StackTS<T>
